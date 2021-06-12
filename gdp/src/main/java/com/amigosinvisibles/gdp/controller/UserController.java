@@ -71,7 +71,6 @@ public class UserController {
         } catch (UsernameNotFoundException ex) {
             model.addAttribute("error",ex.getMessage());
             return "/error";
-
         }
     }
 

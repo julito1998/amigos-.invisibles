@@ -18,26 +18,27 @@ public class User implements UserDetails{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    @NotNull
+
+    @Column(nullable = false,unique = true)
     private String email;
-    
-    @Column(name="first_name")
+
+    @Column(name = "user_name",nullable = false,unique = true)
+    private String userName;
+
+    @Column(name="first_name",nullable = false)
     private String firstName;
     
-    @Column(name="last_name")
+    @Column(name="last_name",nullable = false)
     private String lastName;
 
-    @NotNull
+    @Column(nullable = false)
     private String password;
 
-    @Column(name="birth_date")
+    @Column(name="birth_date",nullable = false)
     private Date birthDate;
-    
-    private String nationality;
 
-    @ManyToMany(mappedBy = "usuarios")
-    private List<Grupo> grupos;
+    @NotNull
+    private String nationality;
 
     @ManyToMany(mappedBy = "usuarios")
     private List<Gusto> gustos;
@@ -46,7 +47,7 @@ public class User implements UserDetails{
         super();
     }
 
-    public User(@NotNull String email, String firstName, String lastName, @NotNull String password, Date birthDate, String natioality) {
+    public User(@NotNull String email,@NotNull String userName, @NotNull String firstName,@NotNull String lastName, @NotNull String password, Date birthDate, String natioality) {
         super();
         this.email = email;
         this.firstName = firstName;
@@ -54,29 +55,38 @@ public class User implements UserDetails{
         this.password = password;
         this.birthDate = birthDate;
         this.nationality = natioality;
+        this.userName=userName;
     }
 
-    public User(String email, String firstName, String lastName, String password, Date birthDate, String nationality, List<Grupo> grupos, List<Gusto> gustos) {
+    public User(@NotNull String email,@NotNull String userName, @NotNull String firstName,@NotNull String lastName, @NotNull String password, Date birthDate, String nationality, List<Gusto> gustos) {
         this.email = email;
+        this.userName=userName;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.birthDate = birthDate;
         this.nationality = nationality;
-        this.grupos = grupos;
         this.gustos = gustos;
     }
 
-    public User(Long id, String email, String firstName, String lastName, String password, Date birthDate, String nationality, List<Grupo> grupos, List<Gusto> gustos) {
+    public User(Long id, @NotNull String email,@NotNull String userName, @NotNull String firstName,@NotNull String lastName, @NotNull String password, Date birthDate, String nationality, List<Gusto> gustos) {
         this.id = id;
         this.email = email;
+        this.userName=userName;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.birthDate = birthDate;
         this.nationality = nationality;
-        this.grupos = grupos;
         this.gustos = gustos;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public void addGusto(Gusto gusto){
@@ -84,21 +94,6 @@ public class User implements UserDetails{
             this.gustos = new ArrayList<>();
         }
         this.gustos.add(gusto);
-    }
-
-    public void addGrupo(Grupo grupo){
-        if(this.grupos == null){
-            this.grupos = new ArrayList<>();
-        }
-        this.grupos.add(grupo);
-    }
-
-    public List<Grupo> getGrupos() {
-        return grupos;
-    }
-
-    public void setGrupos(List<Grupo> grupos) {
-        this.grupos = grupos;
     }
 
     public List<Gusto> getGustos() {

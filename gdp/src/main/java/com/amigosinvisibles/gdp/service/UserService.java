@@ -4,11 +4,14 @@ import com.amigosinvisibles.gdp.model.User;
 import com.amigosinvisibles.gdp.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  *
@@ -46,6 +49,55 @@ public class UserService implements UserDetailsService, IUserService {
        return user;
     }
 
+    @Override
+    public void delete(Long id) throws Exception{
+        try{
+            repo.deleteById(id);
+        }catch (Exception e){
+            throw new Exception("Ocurrio un error al intentar eliminar el usuario con id:" + String.valueOf(id));
+        }
+    }
+
+    @Override
+    public List<User> listAll() {
+        return repo.findAll();
+    }
+
+    @Override
+    public User getOne(Long id) throws Exception{
+        try{
+            return repo.getById(id);
+        }catch (EmptyResultDataAccessException emptyResultDataAccessException){
+             throw new Exception("No existe el usuario con este codigo de usuario: " + id);
+        }
+        catch (Exception e){
+             throw new Exception("Ocurrio un error en el Servicio del usuario para este codigo de usuario: " + id);
+        }
+    }
+
+    @Override
+    public List<User> listAllGrupo(Long idGrupo) throws Exception {
+        try{
+            return repo.findAllByGrupos(idGrupo);
+        }catch (EmptyResultDataAccessException emptyResultDataAccessException){
+            throw new Exception("No existen usuarios para este codigo de grupo: " + idGrupo);
+        }
+        catch (Exception e){
+            throw new Exception("Ocurrio un error en el Servicio del usuario para este codigo de grupo: " + idGrupo);
+        }
+    }
+
+    @Override
+    public List<User> listAllGusto(Long idGusto) throws Exception {
+        try{
+            return repo.findAllByGusto(idGusto);
+        }catch (EmptyResultDataAccessException emptyResultDataAccessException){
+            throw new Exception("No existen usuarios que tengan este codigo de gusto: " + idGusto);
+        }
+        catch (Exception e){
+            throw new Exception("Ocurrio un error en el Servicio del usuario para este codigo de gusto: " + idGusto);
+        }
+    }
 
 
 }
