@@ -5,7 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="013fb81a-a900-4f6c-a44d-3eec38f290ef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/model/Sorteo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/repository/GustoRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/CSS/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/CSS/new.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/HTML/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/HTML/new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ec748a52-10b4-4e91-95a9-419f556a82e8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ec748a52-10b4-4e91-95a9-419f556a82e8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/model/Grupo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/model/Grupo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/model/UserInGrupo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/model/UserInGrupo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/service/GrupoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/service/GrupoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/service/IGrupoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/service/IGrupoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/amigosinvisibles/gdp/GdpApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/amigosinvisibles/gdp/GdpApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CSS/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/HTML/principal.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/HTML/principal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/img/blog-google-discover-400x200.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/img/blog-google-discover-400x200.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/img/istockphoto-1182882502-612x612.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/img/light blue gift box on light blue background-7944-da9c5f12366780c66aedffff40b250d0@1x.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -43,7 +60,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../PROYECTOS EN SPRING BOOT/PPyL/munitor/munnitorbackend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -57,6 +74,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\linco\OneDrive\Escritorio\amigos-.invisibles\gdp\src\main\resources\CSS" />
+      <recent name="C:\Users\linco\OneDrive\Escritorio\amigos-.invisibles\gdp\src\main\resources\HTML" />
       <recent name="C:\Users\linco\OneDrive\Escritorio\amigos-.invisibles\gdp\src\main\java\com\amigosinvisibles\gdp\service" />
       <recent name="C:\Users\linco\OneDrive\Escritorio\amigos-.invisibles\gdp\src\main\java\com\amigosinvisibles\gdp\dto" />
     </key>
@@ -69,6 +88,17 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GdpApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="gdp" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.amigosinvisibles.gdp.GdpApplication" />
@@ -93,6 +123,7 @@
       <workItem from="1623461196456" duration="1758000" />
       <workItem from="1623508768390" duration="10554000" />
       <workItem from="1623594930983" duration="21000" />
+      <workItem from="1623623271661" duration="6201000" />
     </task>
     <servers />
   </component>

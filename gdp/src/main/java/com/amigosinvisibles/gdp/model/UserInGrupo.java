@@ -3,7 +3,7 @@ package com.amigosinvisibles.gdp.model;
 import com.sun.istack.NotNull;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-
+import com.amigosinvisibles.gdp.model.User;
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,19 +16,17 @@ public class UserInGrupo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //utilizo un set (conjunto) para no tener usuarios repetidos
     @JoinColumn(name = "id_user", referencedColumnName = "id")
     @ManyToOne(optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @NotNull
-    private  User usuario;
+    private User usuario;
 
-    //utilizo un set (conjunto) para no tener grupos repetidos
     @JoinColumn(name = "id_grupo", referencedColumnName = "id")
     @ManyToOne(optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @NotNull
-    private  Grupo grupo;
+    private Grupo grupo;
 
     @Column(name = "is_admin")
     private boolean isAdmin;
