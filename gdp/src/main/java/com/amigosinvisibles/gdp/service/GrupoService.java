@@ -11,7 +11,6 @@ import java.util.List;
 public class GrupoService implements IGrupoService{
 
     @Autowired
-<<<<<<< HEAD
     private GrupoRepo repo;
 
     @Override
@@ -58,17 +57,9 @@ public class GrupoService implements IGrupoService{
         }
     }
 
-=======
-    private GrupoRepo grupoRepo;
-
     @Override
-    public Grupo guardar(Grupo grupo) throws Exception {
-        try{
-            return grupoRepo.save(grupo);
-        }catch (Exception e){
-            throw new Exception("algo salio mal" + e.getMessage());
-        }
-
+    public Boolean existById(Long id) {
+        return repo.existsById(id);
     }
->>>>>>> dae2bcab70291dd0e396f3f24d1cc8a3efbc4adb
+
 }
