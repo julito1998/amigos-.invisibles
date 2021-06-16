@@ -29,4 +29,8 @@ public interface GrupoRepo extends JpaRepository<Grupo,Long> {
     List<Grupo> findAllByCapacidadBetweenOrderByCodigo(int capacidad1, int capacidad2);
     List<Grupo> findAllByTipoSorteo(String tipoSorteo);
 
+    @Query(value = "SELECT g FROM UserInGrupo u_g "+
+            "INNER JOIN Grupo g ON g.id=u_g.grupo.id WHERE u_g.usuario.id=:id_user")
+    List<Grupo> findAllByUserId(@Param("id_user")Long idUser);
+
 }

@@ -54,7 +54,7 @@ public class UserService implements UserDetailsService, IUserService {
         try{
             repo.deleteById(id);
         }catch (Exception e){
-            throw new Exception("Ocurrio un error al intentar eliminar el usuario con id:" + String.valueOf(id));
+            throw new Exception("Ocurrio un error al intentar eliminar el usuario con id" + id);
         }
     }
 
