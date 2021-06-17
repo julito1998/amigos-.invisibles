@@ -34,7 +34,7 @@ class GdpApplicationTests {
 			g1.setFechaLimite(dataFormat.parse(fechaLimiteFijaDeGrupo));
 
 			//g1.setFechaLimiteFija	DeGrupo(dataFormat.parse(fechaLimiteFijaDeGrupo));
-			grupoService.guardar(g1);
+			grupoService.create(g1);
 		}catch (Exception e){
 
 		}
