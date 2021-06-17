@@ -27,12 +27,12 @@ public interface UserRepo extends JpaRepository<User,Long> {
     List<User> findAll();
 
     //todos los usuarios que tengan este id de gusto
-    @Query(value = "SELECT u FROM users u INNER JOIN gustos_users g_u ON u.id=g_u.user_id " +
-                    "INNER JOIN gustos g ON g.id=g_u.gusto_id WHERE g.id=:id_gusto",nativeQuery = true)
+    @Query(value = "SELECT u.* FROM users u INNER JOIN gustos_users g_u ON u.id=g_u.user_id " +
+                    "WHERE g_u.gusto_id=:id_gusto",nativeQuery = true)
     List<User>findAllByGusto(@Param("id_gusto")Long idGusto);
 
     //todos los usuarios de un grupo por id de grupo
     @Query(value = "SELECT u FROM User u INNER JOIN UserInGrupo u_g ON u.id=u_g.usuario.id " +
-            "INNER JOIN Grupo g ON g.id=u_g.grupo.id WHERE g.id=:id_grupo")
+            "WHERE u_g.grupo.id=:id_grupo")
     List<User>findAllByGrupos(@Param("id_grupo")Long idGusto);
 }

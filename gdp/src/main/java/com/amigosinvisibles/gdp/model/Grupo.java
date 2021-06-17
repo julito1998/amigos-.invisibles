@@ -4,74 +4,74 @@ import com.sun.istack.NotNull;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import javax.jws.Oneway;
 import javax.persistence.*;
 import java.util.*;
 
 @Entity
-@Table(name = "grupos")
+@Table(name = "grupos", uniqueConstraints=@UniqueConstraint(name = "fk_tipo_sorteo_grupo",columnNames = {"id_tipo_sorteo", "id"}))
 public class Grupo {
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-        private String nombre;
+    @JoinColumn(name = "id_tipo_sorteo", referencedColumnName = "id")
+    @ManyToOne(optional = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @NotNull
+    private TipoSorteo tipoSorteo;
 
-        @Column(unique = true)
-        private String codigo;
+    private String nombre;
 
-        private String estado;
-        //es la fecha limite que establecimos nosotros para realizar el sorteo y que los grupos no queden en estado 'PENDIENTE'
-        @Column(name="fecha_limite_fija_de_grupo")
-        private Date fechaLimite;
+    @Column(unique = true)
+    private String codigo;
 
-        //TIPOS DE SORTEO
-        //fecha que se elije para realizar el sorteo por el admin
-        @Column(name="fecha_sorteo")
-        private Date fechaDelSorteo;
+    //capacidad maxima del grupo
+    @Column(name="capacidad_maxima")
+    private Integer capacidadMaxima;
 
-        //capacidad maxima que se elije el sorteo para realizar el sorteo
-        @Column(name="capacidad_maxima")
-        private int capacidadMaxima;
+    private String estado;
+    //es la fecha limite que establecimos nosotros para realizar el sorteo y que los grupos no queden en estado 'PENDIENTE'
+    @Column(name="fecha_limite_fija_de_grupo")
+    private Date fechaLimite;
 
-        @Column(name = "decision_del_admin")
-        private boolean decisionDelAdmin;
-
-        public Grupo() {
+    public Grupo() {
             super();
         }
 
-    public Grupo(String nombre, String codigo, String estado, Date fechaLimite, Date fechaDelSorteo, int capacidadMaxima, boolean decisionDelAdmin) {
+    public Grupo(Long id, TipoSorteo tipoSorteo, String nombre, String codigo, String estado, Date fechaLimite,Integer capacidadMaxima) {
+        this.id = id;
+        this.tipoSorteo = tipoSorteo;
         this.nombre = nombre;
         this.codigo = codigo;
         this.estado = estado;
         this.fechaLimite = fechaLimite;
-        this.fechaDelSorteo = fechaDelSorteo;
+        this.capacidadMaxima=capacidadMaxima;
+    }
+
+    public Grupo(TipoSorteo tipoSorteo, String nombre, String codigo, String estado, Date fechaLimite,Integer capacidadMaxima) {
+        this.tipoSorteo = tipoSorteo;
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.estado = estado;
+        this.fechaLimite = fechaLimite;
+        this.capacidadMaxima=capacidadMaxima;
+    }
+
+    public Integer getCapacidadMaxima() {
+        return capacidadMaxima;
+    }
+
+    public void setCapacidadMaxima(Integer capacidadMaxima) {
         this.capacidadMaxima = capacidadMaxima;
-        this.decisionDelAdmin = decisionDelAdmin;
     }
 
-    public Grupo(String nombre, String codigo, String estado, Date fechaLimite, boolean decisionDelAdmin) {
-        this.nombre = nombre;
-        this.codigo = codigo;
-        this.estado = estado;
-        this.fechaLimite = fechaLimite;
-        this.decisionDelAdmin = decisionDelAdmin;
+    public TipoSorteo getTipoSorteo() {
+        return tipoSorteo;
     }
 
-    public Grupo(String nombre, String codigo, String estado, Date fechaLimite, int capacidadMaxima) {
-        this.nombre = nombre;
-        this.codigo = codigo;
-        this.estado = estado;
-        this.fechaLimite = fechaLimite;
-        this.capacidadMaxima = capacidadMaxima;
-    }
-
-    public Grupo(String nombre, String codigo, String estado, Date fechaLimite, Date fechaDelSorteo) {
-        this.nombre = nombre;
-        this.codigo = codigo;
-        this.estado = estado;
-        this.fechaLimite = fechaLimite;
-        this.fechaDelSorteo = fechaDelSorteo;
+    public void setTipoSorteo(TipoSorteo tipoSorteo) {
+        this.tipoSorteo = tipoSorteo;
     }
 
     public Date getFechaLimite() {
@@ -82,59 +82,36 @@ public class Grupo {
         this.fechaLimite = fechaLimite;
     }
 
-    public Date getFechaDelSorteo() {
-        return fechaDelSorteo;
-    }
-
-    public void setFechaDelSorteo(Date fechaDelSorteo) {
-        this.fechaDelSorteo = fechaDelSorteo;
-    }
-
-    public int getCapacidadMaxima() {
-        return capacidadMaxima;
-    }
-
-    public void setCapacidadMaxima(int capacidadMaxima) {
-        this.capacidadMaxima = capacidadMaxima;
-    }
-
-    public boolean isDecisionDelAdmin() {
-        return decisionDelAdmin;
-    }
-
-    public void setDecisionDelAdmin(boolean decisionDelAdmin) {
-        this.decisionDelAdmin = decisionDelAdmin;
-    }
-
     public String getEstado() {
             return estado;
         }
 
-        public void setEstado(String estado) {
+
+    public void setEstado(String estado) {
             this.estado = estado;
         }
 
-        public Long getId() {
+    public Long getId() {
             return id;
         }
 
-        public void setId(Long id) {
+    public void setId(Long id) {
             this.id = id;
         }
 
-        public String getNombre() {
+    public String getNombre() {
             return nombre;
         }
 
-        public void setNombre(String nombre) {
+    public void setNombre(String nombre) {
             this.nombre = nombre;
         }
 
-        public String getCodigo() {
+    public String getCodigo() {
             return codigo;
         }
 
-        public void setCodigo(String codigo) {
+    public void setCodigo(String codigo) {
             this.codigo = codigo;
         }
 }
