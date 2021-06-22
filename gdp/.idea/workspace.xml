@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="013fb81a-a900-4f6c-a44d-3eec38f290ef" name="Default Changelist" comment="" />
+    <list default="true" id="013fb81a-a900-4f6c-a44d-3eec38f290ef" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +15,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -55,6 +57,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\linco\OneDrive\Escritorio\amigos-.invisibles\gdp\src\main\resources\CSS" />
+      <recent name="C:\Users\linco\OneDrive\Escritorio\amigos-.invisibles\gdp\src\main\resources\HTML" />
       <recent name="C:\Users\linco\OneDrive\Escritorio\amigos-.invisibles\gdp\src\main\java\com\amigosinvisibles\gdp\service" />
       <recent name="C:\Users\linco\OneDrive\Escritorio\amigos-.invisibles\gdp\src\main\java\com\amigosinvisibles\gdp\dto" />
     </key>
@@ -92,6 +96,7 @@
       <workItem from="1623508768390" duration="10554000" />
       <workItem from="1623594930983" duration="21000" />
       <workItem from="1624321535283" duration="341000" />
+      <workItem from="1623866467236" duration="944000" />
     </task>
     <servers />
   </component>

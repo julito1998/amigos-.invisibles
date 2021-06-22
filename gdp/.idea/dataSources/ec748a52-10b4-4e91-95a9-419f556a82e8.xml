@@ -1002,6 +1002,7 @@ UC/10
     </sequence>
     <table id="36" parent="20" name="grupos">
       <ObjectId>16757</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>1205</StateNumber>
     </table>
