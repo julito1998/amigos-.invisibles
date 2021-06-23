@@ -38,7 +38,7 @@ public class UserController {
     @GetMapping("/new")
     public String userNew(Model model){
         model.addAttribute("user", new UserNewDTO());
-        return "users/new";
+        return "/HTML/new";
     }
 
     @PostMapping("/new")
@@ -47,7 +47,7 @@ public class UserController {
             User user = modelMapper.map(userDTO, User.class);
             user.setBirthDate(userDTO.getBirthDateInDateConverted());
             userService.create(user);
-            return "/users/login";
+            return "/HTML/login";
         }catch(UsernameNotFoundException errorU){
             model.addAttribute("error",errorU.getMessage());
             return "/error";
@@ -60,14 +60,14 @@ public class UserController {
     @GetMapping("/login")
     public String userLogin(Model model){
         model.addAttribute("user", new UserLoginDTO());
-        return "/users/login";
+        return "/HTML/login";
     }
 
     @PostMapping("/login")
     public String login(@ModelAttribute UserLoginDTO user, Model model) {
         try {
             userService.loadUserByUsername(user.getEmail());
-            return "/principal";
+            return "/HTML/principal";
         } catch (UsernameNotFoundException ex) {
             model.addAttribute("error",ex.getMessage());
             return "/error";

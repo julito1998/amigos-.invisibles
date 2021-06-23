@@ -3,6 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/amigos-.invisibles.iml" filepath="$PROJECT_DIR$/.idea/amigos-.invisibles.iml" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      <module fileurl="file://$PROJECT_DIR$/gdp/gdp.iml" filepath="$PROJECT_DIR$/gdp/gdp.iml" />
+>>>>>>> origin/developFacundo
+=======
+      <module fileurl="file://$PROJECT_DIR$/gdp/gdp.iml" filepath="$PROJECT_DIR$/gdp/gdp.iml" />
+>>>>>>> origin/devFacundo
     </modules>
   </component>
 </project>
