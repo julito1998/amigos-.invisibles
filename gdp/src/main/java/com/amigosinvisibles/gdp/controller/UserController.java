@@ -74,4 +74,10 @@ public class UserController {
         }
     }
 
+    @GetMapping("/adminisitro")
+    public String userInGrupo(Model model){
+        model.addAttribute("user", new UserLoginDTO());
+        return "/HTML/adiministro";
+    }
+
 }
