@@ -26,6 +26,10 @@ public class Grupo {
     @Column(unique = true)
     private String codigo;
 
+    //NO ESTA DEFINIDO NINGUN CONSTRUCTOR
+    @Column(name="participantes_actuales")
+    private int participantesActuales;
+
     //capacidad maxima del grupo
     @Column(name="capacidad_maxima")
     private Integer capacidadMaxima;
@@ -56,6 +60,14 @@ public class Grupo {
         this.estado = estado;
         this.fechaLimite = fechaLimite;
         this.capacidadMaxima=capacidadMaxima;
+    }
+
+    public int getParticipantesActuales() {
+        return participantesActuales;
+    }
+
+    public void setParticipantesActuales(int participantesActuales) {
+        this.participantesActuales = participantesActuales;
     }
 
     public Integer getCapacidadMaxima() {
