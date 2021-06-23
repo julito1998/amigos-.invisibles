@@ -19,6 +19,10 @@ public class Grupo {
         @Column(unique = true)
         private String codigo;
 
+        //NO ESTA DEFINIDO NINGUN CONSTRUCTOR
+        @Column(name="participantes_actuales")
+        private int participantesActuales;
+
         private String estado;
         //es la fecha limite que establecimos nosotros para realizar el sorteo y que los grupos no queden en estado 'PENDIENTE'
         @Column(name="fecha_limite_fija_de_grupo")

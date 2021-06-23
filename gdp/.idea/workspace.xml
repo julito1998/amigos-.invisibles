@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="013fb81a-a900-4f6c-a44d-3eec38f290ef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/service/GrupoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/service/GrupoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/service/IGrupoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/service/IGrupoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/controller/GrupoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/dto/GrupoAdministroDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/dto/GrupoPertenezcoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/model/Grupo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/model/Grupo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -79,17 +82,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="GdpApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="gdp" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.amigosinvisibles.gdp.GdpApplication" />
@@ -117,7 +109,10 @@
       <workItem from="1623625360284" duration="1031000" />
       <workItem from="1623724127969" duration="2817000" />
       <workItem from="1623756344726" duration="9517000" />
-      <workItem from="1623846259751" duration="10475000" />
+      <workItem from="1623846259751" duration="11219000" />
+      <workItem from="1623932740661" duration="14314000" />
+      <workItem from="1624016026157" duration="10899000" />
+      <workItem from="1624359190990" duration="2902000" />
     </task>
     <servers />
   </component>
