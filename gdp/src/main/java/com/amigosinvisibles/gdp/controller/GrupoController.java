@@ -9,15 +9,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 @Controller
 // mapping? (creo que es sin el /grupos)
 @RequestMapping ("/grupos")
 public class GrupoController {
+
+    final static Logger LOG = Logger.getLogger(GrupoController.class.getName());
 
     @Autowired
     //indica que vamos a inyectar un componente que esta en memoria
@@ -32,18 +37,43 @@ public class GrupoController {
     //necesito la vista inicial de crear un nuevo grupo para devolver la de pertenezco
     //necesito try/catch?
     //creo que deberia usar model mapper
-    @GetMapping ("/pertenezco")
-    public String pertenezco(Model model){
-        model.addAttribute("grupo", new GrupoPertenezcoDTO());
-        return "pertenezco";
+    @GetMapping ("/pertenezco/{idUser}")
+    public String pertenezco(@PathVariable String idUser,Model model){
+        try{
+            List<GrupoPertenezcoDTO> grupoPertenezcoDTO = grupoService.listAllUser(Long.parseLong(idUser))
+                    .stream()
+                    .map(grupo -> modelMapper.map(grupo,GrupoPertenezcoDTO.class))
+                    .collect(Collectors.toList());
+            model.addAttribute("grupoAdministro", grupoPertenezcoDTO);
+            return "grupos/pertenezco";
+        }catch (Exception e){
+            LOG.log(Level.WARNING,"grupos/pertenezco/{idUser} " + e.getMessage());
+            return "/error";
+        }
+
     }
 
     //necesito try/catch?
     //creo que deberia usar model mapper
-    @GetMapping ("/administro")
+    /**@GetMapping ("/administro")
     public String administro(Model model){
         model.addAttribute("grupo", new GrupoAdministroDTO());
         return "administro";
+    }**/
+
+    @GetMapping("/administro/{idUser}")
+    public String userInGrupo(@PathVariable String idUser, Model model){
+        try{
+            List<GrupoAdministroDTO> grupoAdministroDTOS = grupoService.listAlluserByAdmin(Long.parseLong(idUser))
+                    .stream()
+                    .map(grupo -> modelMapper.map(grupo,GrupoAdministroDTO.class))
+                    .collect(Collectors.toList());
+            model.addAttribute("grupoAdministro", grupoAdministroDTOS);
+            return "grupos/administro";
+        }catch (Exception e){
+            LOG.log(Level.WARNING,"grupos/administro/{idUser} " + e.getMessage());
+            return "/error";
+        }
     }
 
     //quieren volver a pertenezco o a administro?

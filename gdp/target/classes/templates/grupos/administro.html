@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <head>
     <meta charset="utf-8">
@@ -11,14 +11,14 @@
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
 
-    <link href="../CSS/bootstrap.min.css" rel="stylesheet">
-    <link href="../CSS/style.css" rel="stylesheet">
+    <link href="../../static/CSS/bootstrap.min.css" rel="stylesheet">
+    <link href="../../static/CSS/style.css" rel="stylesheet">
 
   </head>
 </head>
-<body background="../img/Diseño%20sin%20título.png">
+<body background="../../static/img/Diseño%20sin%20título.png">
 <button style="font-family:'Times New Roman'" type="button" class="btn btn-lg btn-outline-warning"
-        onclick="location.href='../HTML/principal.html'">
+        onclick="location.href='/principal.html'">
   Volver
 </button>
 <div class="container-fluid" style="font-family:'Times New Roman'">
@@ -65,7 +65,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr class="table-success">
+
+        <tr th:if="${grupoAdministro.isEmpty()}">
+          <td colspan="5"> No Reserves Availability in date selected.</td>
+        </tr>
+
+        <tr class="table-success" >
           <td>
             1
           </td>
@@ -123,8 +128,8 @@
 </div>
 
 
-<script src="../Java-Script/jquery.min.js"></script>
-<script src="../Java-Script/bootstrap.min.js"></script>
-<script src="../Java-Script/scripts.js"></script>
+<script src="../../Java-Script/jquery.min.js"></script>
+<script src="../../Java-Script/bootstrap.min.js"></script>
+<script src="../../Java-Script/scripts.js"></script>
 </body>
 </html>

@@ -47,38 +47,48 @@ public class User implements UserDetails{
         super();
     }
 
-    public User(@NotNull String email,@NotNull String userName, @NotNull String firstName,@NotNull String lastName, @NotNull String password, Date birthDate, String natioality) {
-        super();
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.password = password;
-        this.birthDate = birthDate;
-        this.nationality = natioality;
-        this.userName=userName;
-    }
-
-    public User(@NotNull String email,@NotNull String userName, @NotNull String firstName,@NotNull String lastName, @NotNull String password, Date birthDate, String nationality, List<Gusto> gustos) {
-        this.email = email;
-        this.userName=userName;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.password = password;
-        this.birthDate = birthDate;
-        this.nationality = nationality;
-        this.gustos = gustos;
-    }
-
-    public User(Long id, @NotNull String email,@NotNull String userName, @NotNull String firstName,@NotNull String lastName, @NotNull String password, Date birthDate, String nationality, List<Gusto> gustos) {
+    public User(Long id, String email, String userName, String firstName, String lastName, String password, Date birthDate, String nationality) {
         this.id = id;
         this.email = email;
-        this.userName=userName;
+        this.userName = userName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.birthDate = birthDate;
+        this.nationality = nationality;
+    }
+
+    public User(Long id, String email, String userName, String firstName, String lastName, String password, Date birthDate, String nationality, List<Gusto> gustos) {
+        this.id = id;
+        this.email = email;
+        this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.birthDate = birthDate;
         this.nationality = nationality;
         this.gustos = gustos;
+    }
+
+    public User(String email, String userName, String firstName, String lastName, String password, Date birthDate, String nationality, List<Gusto> gustos) {
+        this.email = email;
+        this.userName = userName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.birthDate = birthDate;
+        this.nationality = nationality;
+        this.gustos = gustos;
+    }
+
+    public User(String email, String userName, String firstName, String lastName, String password, Date birthDate, String nationality) {
+        this.email = email;
+        this.userName = userName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.birthDate = birthDate;
+        this.nationality = nationality;
     }
 
     public String getUserName() {

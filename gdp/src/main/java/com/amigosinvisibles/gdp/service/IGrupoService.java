@@ -13,6 +13,5 @@ public interface IGrupoService {
     Grupo getOne(Long id) throws Exception;
     List<Grupo> listAllUser(Long idUser) throws Exception;
     Boolean existById(Long id);
-
-
+    List<Grupo> listAlluserByAdmin(Long idUser) throws Exception;
 }

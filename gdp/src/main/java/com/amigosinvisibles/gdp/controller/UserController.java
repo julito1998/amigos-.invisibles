@@ -1,9 +1,12 @@
 package com.amigosinvisibles.gdp.controller;
 
+import com.amigosinvisibles.gdp.dto.GrupoAdministroDTO;
 import com.amigosinvisibles.gdp.dto.UserLoginDTO;
 import com.amigosinvisibles.gdp.dto.UserNewDTO;
 import com.amigosinvisibles.gdp.model.User;
+import com.amigosinvisibles.gdp.service.IGrupoService;
 import com.amigosinvisibles.gdp.service.IUserService;
+import jdk.jfr.ContentType;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -12,10 +15,12 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.net.ContentHandler;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -25,8 +30,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/users")
 public class UserController {
 
+    final static Logger LOG = Logger.getLogger(UserController.class.getName());
+
     @Autowired
     private IUserService userService;
+
+    @Autowired
+    private IGrupoService grupoService;
 
     @Qualifier("userService")
     @Autowired
@@ -38,46 +48,56 @@ public class UserController {
     @GetMapping("/new")
     public String userNew(Model model){
         model.addAttribute("user", new UserNewDTO());
-        return "/HTML/new";
+        return "users/new";
     }
 
     @PostMapping("/new")
-    public String regist(@ModelAttribute UserNewDTO userDTO, Model model){
+    public String regist(@ModelAttribute UserNewDTO userDTO){
         try{
             User user = modelMapper.map(userDTO, User.class);
             user.setBirthDate(userDTO.getBirthDateInDateConverted());
             userService.create(user);
-            return "/HTML/login";
+            return "users/login";
         }catch(UsernameNotFoundException errorU){
-            model.addAttribute("error",errorU.getMessage());
+            LOG.log(Level.WARNING,"users/new " + errorU.getMessage());
             return "/error";
         }catch (Exception e){
-            model.addAttribute("error",e.getMessage());
+            LOG.log(Level.WARNING,"users/new " + e.getMessage());
             return "/error";
         }
     }
 
-    @GetMapping("/login")
+    @GetMapping(value = "/login")
     public String userLogin(Model model){
         model.addAttribute("user", new UserLoginDTO());
-        return "/HTML/login";
+        return "users/login";
     }
 
     @PostMapping("/login")
     public String login(@ModelAttribute UserLoginDTO user, Model model) {
         try {
-            userService.loadUserByUsername(user.getEmail());
-            return "/HTML/principal";
+            User user1= (User) userService.loadUserByUsername(user.getEmail());
+            model.addAttribute("idUser", user1.getId());
+            model.addAttribute("firstName", user1.getFirstName());
+            return "/principal";
         } catch (UsernameNotFoundException ex) {
-            model.addAttribute("error",ex.getMessage());
+            LOG.log(Level.WARNING,"users/login " + ex.getMessage());
             return "/error";
         }
     }
 
-    @GetMapping("/adminisitro")
-    public String userInGrupo(Model model){
-        model.addAttribute("user", new UserLoginDTO());
-        return "/HTML/adiministro";
+    @GetMapping(value = "/perfil/{idUser}")
+    public String userPerfil(@PathVariable String idUser, Model model){
+        try {
+            return "users/perfil";
+        } catch (UsernameNotFoundException ex) {
+            LOG.log(Level.WARNING,"users//perfil/{idUser} " + ex.getMessage());
+            return "/error";
+        }
+
     }
+
+
+
 
 }

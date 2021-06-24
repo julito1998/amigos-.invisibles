@@ -10,16 +10,17 @@ public class UserNewDTO implements Serializable {
     private String email;
     private String password;
     private Long id;
+    private String userName;
     private String firstName;
     private String lastName;
     private String birthDate;
     private String nationality;
 
-    public UserNewDTO(String email, String password, Long id, String firstName, String lastName, String birthDate, String nationality) {
-        super();
+    public UserNewDTO(String email, String password, Long id, String userName, String firstName, String lastName, String birthDate, String nationality) {
         this.email = email;
         this.password = password;
         this.id = id;
+        this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
@@ -28,6 +29,14 @@ public class UserNewDTO implements Serializable {
 
     public UserNewDTO() {
         super();
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public Date getBirthDateInDateConverted() throws ParseException {
@@ -64,7 +73,7 @@ public class UserNewDTO implements Serializable {
     }
 
     public String getFirstName() {
-        return firstName;
+        return this.firstName;
     }
 
     public void setFirstName(String firstName) {
@@ -72,7 +81,7 @@ public class UserNewDTO implements Serializable {
     }
 
     public String getLastName() {
-        return lastName;
+        return this.lastName;
     }
 
     public void setLastName(String lastName) {
@@ -80,7 +89,7 @@ public class UserNewDTO implements Serializable {
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     public void setPassword(String password) {
@@ -88,7 +97,7 @@ public class UserNewDTO implements Serializable {
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {

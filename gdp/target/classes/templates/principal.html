@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,11 +25,11 @@
                     <div class="col-md-12">
                         <h2 style="font-family:'Times New Roman'">
 
-                                Bienvenidos (usuario) Pestaña después del login
+                                Bienvenido <span th:text="${firstName}"></span>
 
                         </h2>
                         <p>
-                            <a class="btn" href="perfil.html"style="font-family:'Times New Roman'">Mi perfil</a>
+                            <a class="btn" th:href="@{users}" style="font-family:'Times New Roman'">Mi perfil</a>
                         </p>
                     </div>
                 </div>
@@ -75,7 +75,6 @@
                                 <div class="carousel-caption">
                                     <p style="font-family:'Times New Roman';font-size:30px">
                                         Descubrí
-
                                     </p>
                                 </div>
                             </div>
@@ -96,7 +95,7 @@
         </div>
         <div class="col-md-4">
 
-            <button type="button" class="btn btn-lg btn-block btn-outline-primary" style="font-family:'Times New Roman'" onclick="location.href='../HTML/pertenezco.html'">
+            <button type="button" class="btn btn-lg btn-block btn-outline-primary" style="font-family:'Times New Roman'" onclick="th.location.href='@{/pertenezco/(idUser=${idUser})}'">
                 Grupos a los que pertenezco
             </button>
         </div>
@@ -108,7 +107,7 @@
         </div>
         <div class="col-md-4">
 
-            <button type="button" class="btn btn-lg btn-block btn-outline-success" style="font-family:'Times New Roman'" onclick="location.href='../HTML/administro.html'">
+            <button type="button" class="btn btn-lg btn-block btn-outline-success" style="font-family:'Times New Roman'" th:onclick="'window.location.href = \'' + @{/grupos/administro/{idUser}(idUser=${idUser})} + '\''">
                 Grupos que administro
             </button>
         </div>
@@ -120,7 +119,7 @@
         </div>
         <div class="col-md-4">
 
-            <button type="button" class="btn btn-lg btn-block btn-outline-warning" style="font-family:'Times New Roman'">
+            <button type="button" class="btn btn-lg btn-block btn-outline-warning" style="font-family:'Times New Roman'" onclick="th.location.href='@{/home}'">
                 Salir del sistema
             </button>
         </div>
@@ -133,8 +132,8 @@
     </div>
 
 </div>
-<script src="../Java-Script/jquery.min.js"></script>
-<script src="../Java-Script/bootstrap.min.js"></script>
-<script src="../Java-Script/scripts.js"></script>
+<script src="../../Java-Script/jquery.min.js"></script>
+<script src="../../Java-Script/bootstrap.min.js"></script>
+<script src="../../Java-Script/scripts.js"></script>
 </body>
 </html>
