@@ -54,7 +54,7 @@ public class UserService implements UserDetailsService, IUserService {
         try{
             repo.deleteById(id);
         }catch (Exception e){
-            throw new Exception("Ocurrio un error al intentar eliminar el usuario con id:" + String.valueOf(id));
+            throw new Exception("Ocurrio un error al intentar eliminar el usuario con id" + id);
         }
     }
 
@@ -97,6 +97,16 @@ public class UserService implements UserDetailsService, IUserService {
         catch (Exception e){
             throw new Exception("Ocurrio un error en el Servicio del usuario para este codigo de gusto: " + idGusto);
         }
+    }
+
+    @Override
+    public Integer cantidadGruposAdministrados(Long idUser) {
+        return repo.cantidadGruposAdministrados(idUser);
+    }
+
+    @Override
+    public Integer cantidadGruposParticipados(Long idUser) {
+        return repo.cantidadGruposParticipados(idUser);
     }
 
 

@@ -18,4 +18,6 @@ public interface IUserService extends UserDetailsService {
     User getOne(Long id) throws Exception;
     List<User>listAllGrupo(Long idGrupo) throws Exception;
     List<User>listAllGusto(Long idGusto) throws Exception;
+    Integer cantidadGruposAdministrados(Long idUser);
+    Integer cantidadGruposParticipados(Long idUser);
 }

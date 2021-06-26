@@ -1,95 +1,129 @@
 package com.amigosinvisibles.gdp.model;
 
+import com.sun.istack.NotNull;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import javax.jws.Oneway;
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Entity
-@Table(name = "grupos")
+@Table(name = "grupos", uniqueConstraints=@UniqueConstraint(name = "fk_tipo_sorteo_grupo",columnNames = {"id_tipo_sorteo", "id"}))
 public class Grupo {
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-        private String nombre;
+    @JoinColumn(name = "id_tipo_sorteo", referencedColumnName = "id")
+    @ManyToOne(optional = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @NotNull
+    private TipoSorteo tipoSorteo;
 
-        @Column(unique = true)
-        private String codigo;
+    private String nombre;
 
-        private int capacidad;
+    @Column(unique = true)
+    private String codigo;
 
-        @Column(name = "tipo_sorteo")
-        private String tipoSorteo;
+    //NO ESTA DEFINIDO NINGUN CONSTRUCTOR
+    @Column(name="participantes_actuales")
+    private int participantesActuales;
 
-        public Grupo() {
+    //capacidad maxima del grupo
+    @Column(name="capacidad_maxima")
+    private Integer capacidadMaxima;
+
+    private String estado;
+    //es la fecha limite que establecimos nosotros para realizar el sorteo y que los grupos no queden en estado 'PENDIENTE'
+    @Column(name="fecha_limite_fija_de_grupo")
+    private Date fechaLimite;
+
+    public Grupo() {
             super();
         }
 
+    public Grupo(Long id, TipoSorteo tipoSorteo, String nombre, String codigo, String estado, Date fechaLimite,Integer capacidadMaxima) {
+        this.id = id;
+        this.tipoSorteo = tipoSorteo;
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.estado = estado;
+        this.fechaLimite = fechaLimite;
+        this.capacidadMaxima=capacidadMaxima;
+    }
 
+    public Grupo(TipoSorteo tipoSorteo, String nombre, String codigo, String estado, Date fechaLimite,Integer capacidadMaxima) {
+        this.tipoSorteo = tipoSorteo;
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.estado = estado;
+        this.fechaLimite = fechaLimite;
+        this.capacidadMaxima=capacidadMaxima;
+    }
 
-        public Grupo(Long id, String nombre, String codigo, int capacidad, String tipoSorteo, Set<User> usuarios) {
-            this.id = id;
-            this.nombre = nombre;
-            this.codigo = codigo;
-            this.capacidad = capacidad;
-            this.tipoSorteo = tipoSorteo;
+    public int getParticipantesActuales() {
+        return participantesActuales;
+    }
+
+    public void setParticipantesActuales(int participantesActuales) {
+        this.participantesActuales = participantesActuales;
+    }
+
+    public Integer getCapacidadMaxima() {
+        return capacidadMaxima;
+    }
+
+    public void setCapacidadMaxima(Integer capacidadMaxima) {
+        this.capacidadMaxima = capacidadMaxima;
+    }
+
+    public TipoSorteo getTipoSorteo() {
+        return tipoSorteo;
+    }
+
+    public void setTipoSorteo(TipoSorteo tipoSorteo) {
+        this.tipoSorteo = tipoSorteo;
+    }
+
+    public Date getFechaLimite() {
+        return fechaLimite;
+    }
+
+    public void setFechaLimite(Date fechaLimite) {
+        this.fechaLimite = fechaLimite;
+    }
+
+    public String getEstado() {
+            return estado;
         }
 
-        public Grupo(String nombre, String codigo, int capacidad, String tipoSorteo, Set<User> usuarios) {
-            this.nombre = nombre;
-            this.codigo = codigo;
-            this.capacidad = capacidad;
-            this.tipoSorteo = tipoSorteo;
+
+    public void setEstado(String estado) {
+            this.estado = estado;
         }
 
-        public Grupo(String nombre, String codigo, int capacidad, String tipoSorteo) {
-            this.nombre = nombre;
-            this.codigo = codigo;
-            this.capacidad = capacidad;
-            this.tipoSorteo = tipoSorteo;
-        }
-
-        public Long getId() {
+    public Long getId() {
             return id;
         }
 
-        public void setId(Long id) {
+    public void setId(Long id) {
             this.id = id;
         }
 
-        public String getNombre() {
+    public String getNombre() {
             return nombre;
         }
 
-        public void setNombre(String nombre) {
+    public void setNombre(String nombre) {
             this.nombre = nombre;
         }
 
-        public String getCodigo() {
+    public String getCodigo() {
             return codigo;
         }
 
-        public void setCodigo(String codigo) {
+    public void setCodigo(String codigo) {
             this.codigo = codigo;
         }
-
-        public int getCapacidad() {
-            return capacidad;
-        }
-
-        public void setCapacidad(int capacidad) {
-            this.capacidad = capacidad;
-        }
-
-        public String getTipoSorteo() {
-            return tipoSorteo;
-        }
-
-        public void setTipoSorteo(String tipoSorteo) {
-            this.tipoSorteo = tipoSorteo;
-        }
-
-
 }

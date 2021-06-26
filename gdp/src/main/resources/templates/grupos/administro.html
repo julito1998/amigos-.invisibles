@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bootstrap 4, from LayoutIt!</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="../../CSS/bootstrap.min.css" rel="stylesheet">
+    <link href="../../CSS/style.css" rel="stylesheet">
+
+  </head>
+</head>
+<body background="../../img/Diseño%20sin%20título.png">
+<button style="font-family:'Times New Roman'" type="button" class="btn btn-lg btn-outline-warning"
+        onclick="location.href='/principal'">
+  Volver
+</button>
+<div class="container-fluid" style="font-family:'Times New Roman'">
+  <div class="row">
+    <div class="col-md-12">
+      <dl>
+        <dt>
+          Información General
+        </dt>
+        <dd>
+          Aquí se muestra un listado de los Grupos que administro.
+
+
+        </dd>
+        <dd>
+          *En verde figuran los que siguen activos.
+
+        </dd>
+
+        <dd>
+          *En rojo aparecen los que ya se acabó el tiempo configurado.
+
+        </dd>
+
+      </dl>
+      <table class="table table-sm">
+        <thead>
+        <tr>
+          <th>
+            #
+          </th>
+          <th>
+            Nombre del grupo
+          </th>
+          <th>
+            Fecha Sorteo
+          </th>
+          <th>
+            Fecha límite
+          </th>
+          <th>
+            Cantidad de Participantes
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:if="${grupoAdministro.isEmpty()}">
+          <td colspan="5"> No Administra grupos por ahora.</td>
+        </tr>
+        <tr  class="table-success" th:each="grupos : ${grupoAdministro}">
+          <div th:if="grupos.isActivo()">
+            <td style="background-color: green;">
+          </div>
+          <div th:unless="${grupos.isActivo()}">
+            <td style="background-color: red;">
+          </div>
+            <span th:text="${grupos.getId()}"> # </span>
+          </td>
+          <div th:if="grupos.isActivo()">
+            <td style="background-color: green;">
+          </div>
+          <div th:unless="${grupos.isActivo()}">
+            <td style="background-color: red;">
+          </div>
+            <span th:text="${grupos.getNombre()}"> Nombre </span>
+          </td>
+          <div th:if="grupos.isActivo()">
+            <td style="background-color: green;">
+          </div>
+          <div th:unless="${grupos.isActivo()}">
+            <td style="background-color: red;">
+          </div>
+            <span th:text="${grupos.getFechaDelSorteo()}"> Fecha Sorteo </span>
+          </td>
+          <div th:if="grupos.isActivo()">
+            <td style="background-color: green;">
+          </div>
+          <div th:unless="${grupos.isActivo()}">
+            <td style="background-color: red;">
+          </div>
+            <span th:text="${grupos.getFechaLimite()}"> Fecha límite </span>
+          </td>
+          <div th:if="grupos.isActivo()">
+            <td style="background-color: green;">
+          </div>
+          <div th:unless="${grupos.isActivo()}">
+            <td style="background-color: red;">
+          </div>
+            <span th:text="${grupos.getParticipantesActuales()}"> Cantidad de Participantes </span>
+          </td>
+
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<script src="../../Java-Script/jquery.min.js"></script>
+<script src="../../Java-Script/bootstrap.min.js"></script>
+<script src="../../Java-Script/scripts.js"></script>
+</body>
+</html>
