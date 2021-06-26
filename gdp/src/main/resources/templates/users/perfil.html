@@ -44,23 +44,23 @@
           </li>
         </ul>
       </div>
-      <tbody>
       <div class="px-4 py-3">
         <h5 class="mb-0">Sobre mi</h5>
         <div class="p-4 rounded shadow-sm bg-light">
+          <tbody>
           <tr th:if="${perfil.getGustos().isEmpty()}">
-            <td colspan="5"> No Administra grupos por ahora.</td>
+            <td colspan="2"> No tiene gustos cargados. </td>
           </tr>
-          <tr  class="table-success" th:each="gustoDTO:${perfil.getGustos()}">
-            <td><span th:text="${gustoDTO.getNombre()}"> # </span></td>
-
-          <p class="font-italic mb-0"><span th:text="${perfil.getGustos().get(0).getNombre()}"></span></p>
-
+          <tr th:each="gusto : ${perfil.getGustos()}">
+            <td><span th:text="${gusto.getNombre()}"> </span></td>
           </tr>
+          </tbody>
+
+
         </div>
       </div>
 
-      </tbody>
+
       <div class="py-4 px-4">
 
         <div class="row">

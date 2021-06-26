@@ -67,59 +67,50 @@
         <tbody>
 
         <tr th:if="${grupoAdministro.isEmpty()}">
-          <td colspan="5"> No Reserves Availability in date selected.</td>
+          <td colspan="5"> No Administra grupos por ahora.</td>
         </tr>
+        <tr  class="table-success" th:each="grupos : ${grupoAdministro}">
+          <div th:if="grupos.isActivo()">
+            <td style="background-color: green;">
+          </div>
+          <div th:unless="${grupos.isActivo()}">
+            <td style="background-color: red;">
+          </div>
+            <span th:text="${grupos.getId()}"> # </span>
+          </td>
+          <div th:if="grupos.isActivo()">
+            <td style="background-color: green;">
+          </div>
+          <div th:unless="${grupos.isActivo()}">
+            <td style="background-color: red;">
+          </div>
+            <span th:text="${grupos.getNombre()}"> Nombre </span>
+          </td>
+          <div th:if="grupos.isActivo()">
+            <td style="background-color: green;">
+          </div>
+          <div th:unless="${grupos.isActivo()}">
+            <td style="background-color: red;">
+          </div>
+            <span th:text="${grupos.getFechaDelSorteo()}"> Fecha Sorteo </span>
+          </td>
+          <div th:if="grupos.isActivo()">
+            <td style="background-color: green;">
+          </div>
+          <div th:unless="${grupos.isActivo()}">
+            <td style="background-color: red;">
+          </div>
+            <span th:text="${grupos.getFechaLimite()}"> Fecha límite </span>
+          </td>
+          <div th:if="grupos.isActivo()">
+            <td style="background-color: green;">
+          </div>
+          <div th:unless="${grupos.isActivo()}">
+            <td style="background-color: red;">
+          </div>
+            <span th:text="${grupos.getParticipantesActuales()}"> Cantidad de Participantes </span>
+          </td>
 
-        <tr class="table-success" >
-          <td>
-            1
-          </td>
-          <td>
-            Navidad
-          </td>
-          <td>
-            15/12/2021
-          </td>
-          <td>
-            25/12/2021
-          </td>
-          <td align="center">
-            25
-          </td>
-        </tr>
-        <tr class="table-success">
-          <td>
-            2
-          </td>
-          <td>
-            Año Nuevo
-          </td>
-          <td>
-            30/12/2021
-          </td>
-          <td>
-            02/01/2022
-          </td>
-          <td align="center">
-            60
-          </td>
-        </tr>
-        <tr class="table-danger">
-          <td>
-            3
-          </td>
-          <td>
-            Día empresarial INTEC
-          </td>
-          <td>
-            02/06/2021
-          </td>
-          <td>
-            15/06/2021
-          </td>
-          <td align="center">
-            12
-          </td>
         </tr>
         </tbody>
       </table>
