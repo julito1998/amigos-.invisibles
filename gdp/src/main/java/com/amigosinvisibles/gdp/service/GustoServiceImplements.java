@@ -1,6 +1,7 @@
 package com.amigosinvisibles.gdp.service;
 
 import com.amigosinvisibles.gdp.model.Gusto;
+import com.amigosinvisibles.gdp.model.SorteoAsignacion;
 import com.amigosinvisibles.gdp.repository.GustoRepo;
 import com.amigosinvisibles.gdp.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,4 +28,5 @@ public class GustoServiceImplements implements IGustoService{
             throw new Exception("Error en el servicio de Gusto por usuario. Error: "+ e.getMessage());
         }
     }
+
 }
