@@ -35,4 +35,11 @@ public interface UserRepo extends JpaRepository<User,Long> {
     @Query(value = "SELECT u FROM User u INNER JOIN UserInGrupo u_g ON u.id=u_g.usuario.id " +
             "WHERE u_g.grupo.id=:id_grupo")
     List<User>findAllByGrupos(@Param("id_grupo")Long idGusto);
+
+    @Query(value = "SELECT count(grupo) from UserInGrupo where usuario.id=:id_user and isAdmin=true")
+    Integer cantidadGruposAdministrados(@Param("id_user")Long idUser);
+
+  @Query(value = "SELECT count(grupo) from UserInGrupo where usuario.id=:id_user and isAdmin=false")
+  Integer cantidadGruposParticipados(@Param("id_user")Long idUser);
+
 }

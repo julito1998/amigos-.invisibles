@@ -9,6 +9,7 @@ public class GrupoAdministroDTO implements Serializable {
     private Date fechaDelSorteo;
     private Date fechaLimite;
     private int participantesActuales;
+    private boolean isActivo;
 
     public GrupoAdministroDTO() { super(); }
 
@@ -50,5 +51,13 @@ public class GrupoAdministroDTO implements Serializable {
 
     public void setParticipantesActuales(int participantesActuales) {
         this.participantesActuales = participantesActuales;
+    }
+
+    public boolean isActivo() {
+        return isActivo;
+    }
+
+    public void setActivo(boolean activo) {
+        isActivo = activo;
     }
 }

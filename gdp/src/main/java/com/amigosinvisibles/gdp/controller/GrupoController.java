@@ -3,7 +3,9 @@ package com.amigosinvisibles.gdp.controller;
 import com.amigosinvisibles.gdp.dto.GrupoAdministroDTO;
 import com.amigosinvisibles.gdp.dto.GrupoPertenezcoDTO;
 import com.amigosinvisibles.gdp.model.Grupo;
+import com.amigosinvisibles.gdp.model.User;
 import com.amigosinvisibles.gdp.service.IGrupoService;
+import com.amigosinvisibles.gdp.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -12,7 +14,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -68,6 +72,15 @@ public class GrupoController {
                     .stream()
                     .map(grupo -> modelMapper.map(grupo,GrupoAdministroDTO.class))
                     .collect(Collectors.toList());
+
+            for (GrupoAdministroDTO g:grupoAdministroDTOS) {
+                if (g.getFechaLimite().before(new Date())){
+                    g.setActivo(true);
+                }else {
+                    g.setActivo(false);
+                }
+            }
+
             model.addAttribute("grupoAdministro", grupoAdministroDTOS);
             return "grupos/administro";
         }catch (Exception e){

@@ -2,6 +2,7 @@ package com.amigosinvisibles.gdp;
 
 import com.amigosinvisibles.gdp.model.Grupo;
 import com.amigosinvisibles.gdp.service.GrupoService;
+import com.amigosinvisibles.gdp.service.IGustoService;
 import com.amigosinvisibles.gdp.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,10 @@ class GdpApplicationTests {
 
 	@Autowired
 	private GrupoService grupoService;
+
+	@Autowired
+	private IGustoService gustoService;
+
 
 	@Test
 	void contextLoads() {

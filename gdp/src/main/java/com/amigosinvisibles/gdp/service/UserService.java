@@ -99,5 +99,15 @@ public class UserService implements UserDetailsService, IUserService {
         }
     }
 
+    @Override
+    public Integer cantidadGruposAdministrados(Long idUser) {
+        return repo.cantidadGruposAdministrados(idUser);
+    }
+
+    @Override
+    public Integer cantidadGruposParticipados(Long idUser) {
+        return repo.cantidadGruposParticipados(idUser);
+    }
+
 
 }
