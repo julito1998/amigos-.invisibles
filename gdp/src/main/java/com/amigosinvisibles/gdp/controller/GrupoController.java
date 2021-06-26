@@ -48,7 +48,7 @@ public class GrupoController {
                     .stream()
                     .map(grupo -> modelMapper.map(grupo,GrupoPertenezcoDTO.class))
                     .collect(Collectors.toList());
-            model.addAttribute("grupoAdministro", grupoPertenezcoDTO);
+            model.addAttribute("grupoPertenezco", grupoPertenezcoDTO);
             return "grupos/pertenezco";
         }catch (Exception e){
             LOG.log(Level.WARNING,"grupos/pertenezco/{idUser} " + e.getMessage());
