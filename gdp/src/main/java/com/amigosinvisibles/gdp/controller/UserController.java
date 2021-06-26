@@ -1,17 +1,13 @@
 package com.amigosinvisibles.gdp.controller;
 
 import com.amigosinvisibles.gdp.dto.*;
-import com.amigosinvisibles.gdp.model.Gusto;
 import com.amigosinvisibles.gdp.model.User;
 import com.amigosinvisibles.gdp.service.IGrupoService;
 import com.amigosinvisibles.gdp.service.IGustoService;
 import com.amigosinvisibles.gdp.service.IUserService;
-import jdk.jfr.ContentType;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
@@ -19,8 +15,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.ContentHandler;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
