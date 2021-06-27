@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class AppController {
 
-    @GetMapping("/principal")
-    public String home(){
-        return "principal";
+    @GetMapping
+    public String principal(){
+        return "app/home";
     }
 
-    @GetMapping("/home")
-    public String principal(){
-        return "home";
+    @GetMapping("/principal")
+    public String home(){
+        return "app/principal";
     }
 
     @GetMapping(value="/error", produces="application/json; charset=UTF-8")

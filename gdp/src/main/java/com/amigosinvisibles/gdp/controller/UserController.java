@@ -80,7 +80,7 @@ public class UserController {
             User user1= (User) userService.loadUserByUsername(user.getEmail());
             model.addAttribute("idUser", user1.getId());
             model.addAttribute("firstName", user1.getFirstName());
-            return "/principal";
+            return "redirect:/principal";
         } catch (UsernameNotFoundException ex) {
             LOG.log(Level.WARNING,"users/login " + ex.getMessage());
             return "/error";
