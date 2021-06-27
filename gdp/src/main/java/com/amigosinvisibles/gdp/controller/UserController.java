@@ -8,6 +8,7 @@ import com.amigosinvisibles.gdp.service.IUserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
@@ -95,21 +96,22 @@ public class UserController {
     }
     User userName =(User) userDetails;
 **/
-    @GetMapping(value = "/perfil/{idUser}")
-    public String userPerfil(@PathVariable String idUser, Model model){
+    @GetMapping(value = "/perfil")
+    public String userPerfil(Model model, Authentication authentication){
+        User sessionUser = (User)authentication.getPrincipal();
         try {
             UserPerfilDTO userPerfilDTO= new UserPerfilDTO();
-            User user = userService.getOne(Long.parseLong(idUser));
+            User user = userService.getOne(sessionUser.getId());
             userPerfilDTO.setFirstName(user.getFirstName());
             userPerfilDTO.setLastName(user.getLastName());
             if (user!= null){
-                List<GustoDTO> gustoDTOList = gustoService.findAllByUserId(Long.parseLong(idUser))
+                List<GustoDTO> gustoDTOList = gustoService.findAllByUserId(sessionUser.getId())
                         .stream()
                         .map(gusto -> modelMapper.map(gusto, GustoDTO.class)).collect(Collectors.toList());
                 userPerfilDTO.setGustos(gustoDTOList);
 
-                userPerfilDTO.setCantidadGruposAdministra(userService.cantidadGruposAdministrados(Long.parseLong(idUser)));
-                userPerfilDTO.setCantidadGruposPertenece(userService.cantidadGruposParticipados(Long.parseLong(idUser)));
+                userPerfilDTO.setCantidadGruposAdministra(userService.cantidadGruposAdministrados(sessionUser.getId()));
+                userPerfilDTO.setCantidadGruposPertenece(userService.cantidadGruposParticipados(sessionUser.getId()));
             }
             model.addAttribute("perfil", userPerfilDTO);
             return "users/perfil";
