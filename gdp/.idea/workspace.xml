@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/ec748a52-10b4-4e91-95a9-419f556a82e8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ec748a52-10b4-4e91-95a9-419f556a82e8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/config/SecurityConfiguration.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/model/TipoSorteo.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/repository/TipoSorteo.java" afterDir="false" />
@@ -32,6 +33,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/model/Grupo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/model/Grupo.java" afterDir="false" />
 >>>>>>> e93da0a1a7bcdbf93e3d55b3f9eb83197499e618
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Gustos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+>>>>>>> 37a0851eb2ad65a09d1eb46cdddbe37725b642b4
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +109,19 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GdpApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="gdp" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.amigosinvisibles.gdp.GdpApplication" />
