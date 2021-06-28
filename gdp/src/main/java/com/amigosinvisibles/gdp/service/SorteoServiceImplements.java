@@ -30,20 +30,7 @@ public class SorteoServiceImplements  implements ISorteoAsignacionService{
     }
 
 
-    private void realizarSorteo(List<Grupo> grupos){
-            ArrayList<SorteoAsignacion> sorteoAsignacions= new ArrayList<>();
-            for (Grupo grupo:grupos){
-                try {
-                    Random random = new Random();
 
-                    ArrayList<User> users = new ArrayList<>(userService.listAllGrupo(grupo.getId()));
-
-                    x = Math.random()*users.length+0);
-                }atch (Exception e)c
-
-                }
-            }
-    }
 
     private void guardarSorteoAutomatico(){
         List<Grupo> grupoList= new ArrayList<>();
@@ -65,7 +52,6 @@ public class SorteoServiceImplements  implements ISorteoAsignacionService{
                     break;
             }
         }
-        realizarSorteo(grupoList);
     }
 
     @Override
