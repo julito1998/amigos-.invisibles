@@ -16,8 +16,8 @@ public interface SorteoAsignacionRepo extends JpaRepository<SorteoAsignacion,Lon
     List<User> listUserAsignados(@Param("id_user")Long idUser);
 
     //obtengo el grupo, la fecha, el usuario visible y el usuario invisible
-    @Query("SELECT sa FROM SorteoAsignacion sa WHERE sa.usuario_visible=:id_user")
-    List<SorteoAsignacion> listAsignados(@Param("id_iser")Long idUser);
+    @Query("SELECT sa FROM SorteoAsignacion sa WHERE sa.usuario_visible = :id_user")
+    List<SorteoAsignacion> listAsignados(@Param("id_user")Long idUser);
 
 
 }
