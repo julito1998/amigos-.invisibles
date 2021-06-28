@@ -97,22 +97,22 @@ public class SorteoServiceImplements  implements ISorteoAsignacionService{
                         try{
                             realizarSorteo(g);
                         }catch (Exception e){
-                            throw new Exception("Error en el servicio de Sorteo al intentar realizarlo de forma automatica. Error: "+ e.getMessage());
+                            throw new Exception("Error en el servicio de Sorteo al intentar realizarlo de forma automatica por Fecha. Error: "+ e.getMessage());
                         }
                     }
                     break;
-                //el admin realiza el sorteo es decir no hago nada
-                case "2":
-                    break;
                 //el sorteo se realiza cuando se llega a una cantidad maxima de participantes
-                case "3":
+                case "2":
                     if(g.getCapacidadMaxima()==g.getTipoSorteo().getCapacidadMaxima()){
                         try{
                             realizarSorteo(g);
                         }catch (Exception e){
-                            throw new Exception("Error en el servicio de Sorteo al intentar realizarlo de forma automatica. Error: "+ e.getMessage());
+                            throw new Exception("Error en el servicio de Sorteo al intentar realizarlo de forma automatica por Capacidad Maxima. Error: "+ e.getMessage());
                         }
                     }
+                    break;
+                //el admin realiza el sorteo es decir no hago nada
+                case "3":
                     break;
                 default:
                     break;

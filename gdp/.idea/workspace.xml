@@ -5,38 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="013fb81a-a900-4f6c-a44d-3eec38f290ef" name="Default Changelist" comment="">
-<<<<<<< HEAD
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/ec748a52-10b4-4e91-95a9-419f556a82e8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ec748a52-10b4-4e91-95a9-419f556a82e8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/config/SecurityConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/model/TipoSorteo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/repository/TipoSorteo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ec748a52-10b4-4e91-95a9-419f556a82e8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ec748a52-10b4-4e91-95a9-419f556a82e8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ec748a52-10b4-4e91-95a9-419f556a82e8/storage_v2/_src_/database/amigo_invisible.U4vY6A/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ec748a52-10b4-4e91-95a9-419f556a82e8/storage_v2/_src_/database/amigo_invisible.U4vY6A/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/model/Grupo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/model/Grupo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/model/Sorteo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/model/SorteoAsignacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/repository/GrupoRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/repository/GrupoRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/repository/GustoRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/repository/GustoRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gdp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gdp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/controller/GrupoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/controller/GrupoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/dto/GrupoAdministroDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/dto/GrupoAdministroDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/dto/GrupoPertenezcoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/dto/GrupoPertenezcoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/repository/SorteoAsignacionRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/repository/SorteoAsignacionRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/repository/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/repository/UserRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/service/IGrupoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/service/IGrupoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/amigosinvisibles/gdp/GdpApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/amigosinvisibles/gdp/GdpApplicationTests.java" afterDir="false" />
-=======
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/controller/GrupoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/dto/GrupoAdministroDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/dto/GrupoPertenezcoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/model/Grupo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/model/Grupo.java" afterDir="false" />
->>>>>>> e93da0a1a7bcdbf93e3d55b3f9eb83197499e618
-=======
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Gustos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
->>>>>>> 37a0851eb2ad65a09d1eb46cdddbe37725b642b4
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/service/SorteoServiceImplements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/service/SorteoServiceImplements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/grupos/creargrupo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/grupos/creargrupo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/grupos/creargrupo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/grupos/creargrupo.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +65,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="ml.local.models.training.notification.expired" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -152,15 +135,12 @@
       <workItem from="1623625360284" duration="1031000" />
       <workItem from="1623724127969" duration="2817000" />
       <workItem from="1623756344726" duration="9517000" />
-<<<<<<< HEAD
       <workItem from="1623846259751" duration="10475000" />
-
-=======
       <workItem from="1623846259751" duration="11219000" />
       <workItem from="1623932740661" duration="14314000" />
       <workItem from="1624016026157" duration="10899000" />
       <workItem from="1624359190990" duration="2902000" />
->>>>>>> e93da0a1a7bcdbf93e3d55b3f9eb83197499e618
+      <workItem from="1624911574183" duration="3307000" />
     </task>
     <servers />
   </component>

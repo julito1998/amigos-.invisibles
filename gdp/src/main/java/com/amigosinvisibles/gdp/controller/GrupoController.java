@@ -77,13 +77,12 @@ public class GrupoController {
                     .collect(Collectors.toList());
 
             for (GrupoAdministroDTO g:grupoAdministroDTOS) {
-                if (g.getFechaLimite().before(new Date())){
+                if (g.getFechaDelSorteoDateConverted().before(new Date())){
                     g.setActivo(true);
                 }else {
                     g.setActivo(false);
                 }
             }
-
             model.addAttribute("grupoAdministro", grupoAdministroDTOS);
             return "/grupos/administro";
         }catch (Exception e){
@@ -103,8 +102,13 @@ public class GrupoController {
     //falta el boton y formulario en el html
     @PostMapping("/creargrupo")
     public String create(@ModelAttribute ("grupo") Grupo grupo) throws Exception {
-        grupoService.create(grupo);
-        return "redirect:/pertenezco";
+        try {
+            grupoService.create(grupo);
+            return "redirect:/pertenezco";
+        }catch (Exception e){
+            LOG.log(Level.WARNING,"grupos/creargrupo" + e.getMessage());
+            return "redirect:/error";
+        }
     }
 
 }

@@ -1,17 +1,22 @@
 package com.amigosinvisibles.gdp.dto;
 
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class GrupoPertenezcoDTO implements Serializable {
 
+    private static final SimpleDateFormat dateFormat
+            = new SimpleDateFormat("yyyy-MM-dd");
+
     private String nombre;
-    private Date fechaDelSorteo;
-    private Date fechaLimite;
+    private String fechaDelSorteo;
+    private String fechaLimite;
     private String amigoInvisible;
     private String eMail;
 
-    public GrupoPertenezcoDTO(String nombre, Date fechaDelSorteo, Date fechaLimite, String amigoInvisible, String eMail){
+    public GrupoPertenezcoDTO(String nombre, String fechaDelSorteo, String fechaLimite, String amigoInvisible, String eMail){
         super();
         this.nombre = nombre;
         this.fechaDelSorteo = fechaDelSorteo;
@@ -32,20 +37,20 @@ public class GrupoPertenezcoDTO implements Serializable {
         return nombre;
     }
 
-    public void setFechaDelSorteo(Date fechaDelSorteo){
+    public void setFechaDelSorteo(String fechaDelSorteo){
         this.fechaDelSorteo = fechaDelSorteo;
     }
 
-    public Date getFechaDelSorteo(Date fechaDelSorteo){
-        return fechaDelSorteo;
+    public String getFechaDelSorteo(){
+        return this.fechaDelSorteo;
     }
 
-    public void setFechaLimite(Date fechaLimite){
+    public void setFechaLimite(String fechaLimite){
         this.fechaLimite = fechaLimite;
     }
 
-    public Date getFechaLimite(Date fechaLimite){
-        return fechaLimite;
+    public String getFechaLimite(){
+        return this.fechaLimite;
     }
 
     public void setAmigoInvisible(String amigoInvisible){
@@ -62,5 +67,22 @@ public class GrupoPertenezcoDTO implements Serializable {
 
     public String getEMail(){
         return eMail;
+    }
+
+
+    public Date getFechaLimiteDateConverted() throws ParseException {
+        return dateFormat.parse(this.fechaLimite);
+    }
+
+    public void setFechaLimiteInDate(Date date) {
+        this.fechaLimite = dateFormat.format(date);
+    }
+
+    public Date getFechaDelSorteoDateConverted() throws ParseException {
+        return dateFormat.parse(this.fechaDelSorteo);
+    }
+
+    public void setFechaDelSorteoInDate(Date date) {
+        this.fechaDelSorteo = dateFormat.format(date);
     }
 }

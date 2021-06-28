@@ -113,5 +113,13 @@ public class UserService implements UserDetailsService, IUserService {
         return repo.cantidadGruposParticipados(idUser);
     }
 
+    @Override
+    public List<User> listUserAsignados(Long idUser) throws Exception{
+        try{
+            return repo.listUserAsignados(idUser);
+        }catch (Exception e){
+            throw new Exception("Ocurrio un error en el Servicio del usuario al intentar obtener los amigos a los que debe regalarle un usuario. Error: " + e.getMessage());
+        }
+    }
 
 }
