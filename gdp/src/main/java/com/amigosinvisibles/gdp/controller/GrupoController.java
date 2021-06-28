@@ -92,10 +92,16 @@ public class GrupoController {
         }
     }
 
+
+    @GetMapping("/creargrupo")
+    public String create() throws Exception {
+        return "/grupos/creargrupo";
+    }
+
     //quieren volver a pertenezco o a administro?
     //recordar que el tag del html tiene que llamarse "grupo" para agregar
     //falta el boton y formulario en el html
-    @PostMapping("/createGrupo")
+    @PostMapping("/creargrupo")
     public String create(@ModelAttribute ("grupo") Grupo grupo) throws Exception {
         grupoService.create(grupo);
         return "redirect:/pertenezco";
