@@ -55,9 +55,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
      protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().authorizeRequests()
-                .antMatchers("/users/login","/users/new", "/grupo/**","/Java-Script/**","/CSS/**", "/Fonts/**", "/img/**").permitAll()
-                .antMatchers(HttpMethod.POST,"/users").permitAll();
-                /**
+                .antMatchers("/","app/home", "/users/login","/users/new","/Java-Script/**","/CSS/**", "/Fonts/**", "/img/**").permitAll()
+                .antMatchers(HttpMethod.POST,"/users").permitAll()
                 .antMatchers("/**").hasRole("USER")
                 .and().formLogin()
                 //referencia al metodo get
@@ -68,8 +67,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 //hace referencia al los name de los labels dentro del index.html
                 .usernameParameter("email")
                 .passwordParameter("password");
-                 **/
-
         http
                 .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/");
 

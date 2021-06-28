@@ -1,17 +1,24 @@
 package com.amigosinvisibles.gdp.dto;
 
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class GrupoAdministroDTO implements Serializable {
+
+    private static final SimpleDateFormat dateFormat
+            = new SimpleDateFormat("yyyy-MM-dd");
     private Long id;
     private String nombre;
-    private Date fechaDelSorteo;
-    private Date fechaLimite;
+    private String fechaDelSorteo;
+    private String fechaLimite;
     private int participantesActuales;
     private boolean isActivo;
 
-    public GrupoAdministroDTO() { super(); }
+    public GrupoAdministroDTO() {
+        super();
+    }
 
     public Long getId() {
         return id;
@@ -29,19 +36,19 @@ public class GrupoAdministroDTO implements Serializable {
         this.nombre = nombre;
     }
 
-    public Date getFechaDelSorteo() {
+    public String getFechaDelSorteo() {
         return fechaDelSorteo;
     }
 
-    public void setFechaDelSorteo(Date fechaDelSorteo) {
+    public void setFechaDelSorteo(String fechaDelSorteo) {
         this.fechaDelSorteo = fechaDelSorteo;
     }
 
-    public Date getFechaLimite() {
+    public String getFechaLimite() {
         return fechaLimite;
     }
 
-    public void setFechaLimite(Date fechaLimite) {
+    public void setFechaLimite(String fechaLimite) {
         this.fechaLimite = fechaLimite;
     }
 
@@ -59,5 +66,21 @@ public class GrupoAdministroDTO implements Serializable {
 
     public void setActivo(boolean activo) {
         isActivo = activo;
+    }
+
+    public Date getFechaLimiteDateConverted() throws ParseException {
+        return dateFormat.parse(this.fechaLimite);
+    }
+
+    public void setFechaLimiteInDate(Date date) {
+        this.fechaLimite = dateFormat.format(date);
+    }
+
+    public Date getFechaDelSorteoDateConverted() throws ParseException {
+        return dateFormat.parse(this.fechaDelSorteo);
+    }
+
+    public void setFechaDelSorteoInDate(Date date) {
+        this.fechaDelSorteo = dateFormat.format(date);
     }
 }

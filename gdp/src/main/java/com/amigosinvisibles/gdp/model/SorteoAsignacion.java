@@ -36,6 +36,10 @@ public class SorteoAsignacion {
     @NotNull
     private Date fechaSorteo;
 
+    public SorteoAsignacion(){
+        super();
+    }
+
     public SorteoAsignacion(Long id, User usuario_visible, User usuario_invisible, Grupo grupo, Date fechaSorteo) {
         this.id = id;
         this.usuario_visible = usuario_visible;

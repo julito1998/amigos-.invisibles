@@ -67,8 +67,6 @@ public class UserService implements UserDetailsService, IUserService {
     public User getOne(Long id) throws Exception{
         try{
             return repo.getById(id);
-        }catch (EmptyResultDataAccessException emptyResultDataAccessException){
-             throw new Exception("No existe el usuario con este codigo de usuario: " + id);
         }
         catch (Exception e){
              throw new Exception("Ocurrio un error en el Servicio del usuario para este codigo de usuario: " + id);
@@ -79,8 +77,16 @@ public class UserService implements UserDetailsService, IUserService {
     public List<User> listAllGrupo(Long idGrupo) throws Exception {
         try{
             return repo.findAllByGrupos(idGrupo);
-        }catch (EmptyResultDataAccessException emptyResultDataAccessException){
-            throw new Exception("No existen usuarios para este codigo de grupo: " + idGrupo);
+        }
+        catch (Exception e){
+            throw new Exception("Ocurrio un error en el Servicio del usuario para este codigo de grupo: " + idGrupo);
+        }
+    }
+
+    @Override
+    public List<Long> listAllGrupoById(Long idGrupo) throws Exception {
+        try{
+            return repo.listAllGrupoById(idGrupo);
         }
         catch (Exception e){
             throw new Exception("Ocurrio un error en el Servicio del usuario para este codigo de grupo: " + idGrupo);
@@ -91,8 +97,6 @@ public class UserService implements UserDetailsService, IUserService {
     public List<User> listAllGusto(Long idGusto) throws Exception {
         try{
             return repo.findAllByGusto(idGusto);
-        }catch (EmptyResultDataAccessException emptyResultDataAccessException){
-            throw new Exception("No existen usuarios que tengan este codigo de gusto: " + idGusto);
         }
         catch (Exception e){
             throw new Exception("Ocurrio un error en el Servicio del usuario para este codigo de gusto: " + idGusto);
@@ -109,5 +113,13 @@ public class UserService implements UserDetailsService, IUserService {
         return repo.cantidadGruposParticipados(idUser);
     }
 
+    @Override
+    public List<User> listUserAsignados(Long idUser) throws Exception{
+        try{
+            return repo.listUserAsignados(idUser);
+        }catch (Exception e){
+            throw new Exception("Ocurrio un error en el Servicio del usuario al intentar obtener los amigos a los que debe regalarle un usuario. Error: " + e.getMessage());
+        }
+    }
 
 }

@@ -35,11 +35,19 @@ public interface UserRepo extends JpaRepository<User,Long> {
     @Query(value = "SELECT u FROM User u INNER JOIN UserInGrupo u_g ON u.id=u_g.usuario.id " +
             "WHERE u_g.grupo.id=:id_grupo")
     List<User>findAllByGrupos(@Param("id_grupo")Long idGusto);
+  // obtengo todos los id de los usuarios de un grupo
+   @Query(value = "SELECT u.id FROM User u INNER JOIN UserInGrupo u_g ON u.id=u_g.usuario.id " +
+                   "WHERE u_g.grupo.id=:id_grupo")
+    List<Long>listAllGrupoById(@Param("id_grupo")Long idGusto);
 
     @Query(value = "SELECT count(grupo) from UserInGrupo where usuario.id=:id_user and isAdmin=true")
     Integer cantidadGruposAdministrados(@Param("id_user")Long idUser);
 
   @Query(value = "SELECT count(grupo) from UserInGrupo where usuario.id=:id_user and isAdmin=false")
   Integer cantidadGruposParticipados(@Param("id_user")Long idUser);
+
+  //obtengo una lista de todos los usuarios a los que tengo que regalarle
+    @Query("SELECT sa.usuario_invisible FROM SorteoAsignacion sa INNER JOIN User u on sa.usuario_visible=u WHERE u.id=:id_user")
+    List<User> listUserAsignados(@Param("id_user")Long idUser);
 
 }
