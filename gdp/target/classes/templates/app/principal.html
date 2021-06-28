@@ -95,7 +95,7 @@
         </div>
         <div class="col-md-4">
 
-            <button type="button" class="btn btn-lg btn-block btn-outline-primary" style="font-family:'Times New Roman'" th:onclick="'window.location.href = \'' + @{/grupos/pertenezco/{idUser}(idUser=${idUser})} + '\''">
+            <button type="button" class="btn btn-lg btn-block btn-outline-primary" style="font-family:'Times New Roman'" th:onclick="'window.location.href = \'' + @{/grupos/pertenezco} + '\''">
                 Grupos a los que pertenezco
             </button>
         </div>
@@ -107,7 +107,7 @@
         </div>
         <div class="col-md-4">
 
-            <button type="button" class="btn btn-lg btn-block btn-outline-success" style="font-family:'Times New Roman'" th:onclick="'window.location.href = \'' + @{/grupos/administro/{idUser}(idUser=${idUser})} + '\''">
+            <button type="button" class="btn btn-lg btn-block btn-outline-success" style="font-family:'Times New Roman'" th:onclick="'window.location.href = \'' + @{/grupos/administro} + '\''">
                 Grupos que administro
             </button>
         </div>
@@ -118,8 +118,7 @@
         <div class="col-md-4">
         </div>
         <div class="col-md-4">
-
-            <button type="button" class="btn btn-lg btn-block btn-outline-warning" style="font-family:'Times New Roman'" onclick="th.location.href='@{/home}'">
+            <button type="button" class="btn btn-lg btn-block btn-outline-warning" style="font-family:'Times New Roman'" th:onclick="'window.location.href = \'' + @{/logout} + '\''">
                 Salir del sistema
             </button>
         </div>
@@ -131,7 +130,7 @@
         </div>
         <div class="col-md-4">
 
-            <button type="button" class="btn btn-outline-danger btn-block"style="font-family:'Times New Roman'" onclick="location.href='grupos/creargrupo.html'">
+            <button type="button" class="btn btn-outline-danger btn-block"style="font-family:'Times New Roman'" th:onclick="'window.location.href = \'' + @{/grupos/creargrupo} + '\''">
                 Crear Grupos
             </button>
         </div>
