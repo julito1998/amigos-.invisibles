@@ -5,6 +5,7 @@
 <head>
 
     <meta charset="utf-8">
+    <link rel="stylesheet" th:href= "@{../../CSS/app/principal.css}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,9 +16,11 @@
 
     <link href="../../CSS/bootstrap.min.css" rel="stylesheet">
     <link href="../../CSS/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
-<body background="../img/Diseño%20sin%20título.png">
+
+<body background="../img/Diseño%20sin%20título2.png">
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
@@ -42,6 +45,12 @@
             </div>
             <div class="row">
                 <div class="col-md-3">
+                    <button type="button" class="btn btn-lg btn-block btn-primary" style="font-family:'Times New Roman'" th:onclick="'window.location.href = \'' + @{/grupos/pertenezco} + '\''"><i class="fa fa-book fa-fw" aria-hidden="true"></i>
+                        Grupos a los que pertenezco
+                    </button>
+                    <button type="button" class="btn btn-lg btn-block btn-success" style="font-family:'Times New Roman'" th:onclick="'window.location.href = \'' + @{/grupos/administro} + '\''"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>
+                        Grupos que administro
+                    </button>
                 </div>
                 <div class="col-md-6">
                     <div class="carousel slide" id="carousel-36621">
@@ -89,6 +98,12 @@
                     </div>
                 </div>
                 <div class="col-md-3">
+                    <button type="button" class="btn btn-lg btn-danger btn-block"style="font-family:'Times New Roman'" th:onclick="'window.location.href = \'' + @{/grupos/creargrupo} + '\''"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
+                        Crear Grupos
+                    </button>
+                    <button type="button" class="btn btn-lg btn-block btn-warning" style="font-family:'Times New Roman'" th:onclick="'window.location.href = \'' + @{/logout} + '\''"><i class="fa fa-key fa-fw"></i>
+                        Salir del sistema
+                    </button>
                 </div>
             </div>
         </div>
@@ -98,9 +113,7 @@
         </div>
         <div class="col-md-4">
 
-            <button type="button" class="btn btn-lg btn-block btn-outline-primary" style="font-family:'Times New Roman'" th:onclick="'window.location.href = \'' + @{/grupos/pertenezco} + '\''">
-                Grupos a los que pertenezco
-            </button>
+
         </div>
         <div class="col-md-4">
         </div>
@@ -110,9 +123,7 @@
         </div>
         <div class="col-md-4">
 
-            <button type="button" class="btn btn-lg btn-block btn-outline-success" style="font-family:'Times New Roman'" th:onclick="'window.location.href = \'' + @{/grupos/administro} + '\''">
-                Grupos que administro
-            </button>
+
         </div>
         <div class="col-md-4">
         </div>
@@ -122,9 +133,7 @@
         </div>
         <div class="col-md-4">
 
-            <button type="button" class="btn btn-lg btn-block btn-outline-warning" style="font-family:'Times New Roman'" th:onclick="'window.location.href = \'' + @{/logout} + '\''">
-                Salir del sistema
-            </button>
+
         </div>
         <div class="col-md-4">
         </div>
@@ -133,9 +142,7 @@
         <div class="col-md-4">
         </div>
         <div class="col-md-4">
-            <button type="button" class="btn btn-outline-danger btn-block"style="font-family:'Times New Roman'" th:onclick="'window.location.href = \'' + @{/grupos/creargrupo} + '\''">
-              Crear Grupos
-            </button>
+
         </div>
         <div class="col-md-4">
         </div>
