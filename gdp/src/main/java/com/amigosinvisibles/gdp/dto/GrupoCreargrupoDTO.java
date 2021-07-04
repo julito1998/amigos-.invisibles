@@ -1,38 +1,26 @@
 package com.amigosinvisibles.gdp.dto;
 
-import com.amigosinvisibles.gdp.model.User;
-
 import java.io.Serializable;
-import java.util.Date;
-import java.util.List;
 
 public class GrupoCreargrupoDTO implements Serializable {
 
-    private Date fechaDelSorteo;
-    private List<User> users;
+    private String nombre;
+    private String email;
 
-    public GrupoCreargrupoDTO(Date fechaDelSorteo){
-        this.fechaDelSorteo = fechaDelSorteo;
+    public GrupoCreargrupoDTO() {
+        super();
     }
 
-    public GrupoCreargrupoDTO(Date fechaDelSorteo, List<User> users){
-        this.fechaDelSorteo = fechaDelSorteo;
-        this.users = users;
+    public GrupoCreargrupoDTO(String nombre, String email) {
+        this.nombre = nombre;
+        this.email = email;
     }
 
-    public Date getFechaDelSorteo() {
-        return fechaDelSorteo;
-    }
+    public String getNombre() { return nombre; }
 
-    public void setFechaDelSorteo(Date fechaDelSorteo) {
-        this.fechaDelSorteo = fechaDelSorteo;
-    }
+    public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public List<User> getUsers() {
-        return users;
-    }
+    public String getEmail() { return email; }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
+    public void setEmail(String email) { this.email = email; }
 }
