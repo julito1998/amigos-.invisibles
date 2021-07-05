@@ -40,6 +40,12 @@ public class TipoSorteo {
         this.decisionDelAdmin = decisionDelAdmin;
     }
 
+    public TipoSorteo(Date fechaDelSorteo, int capacidadMaxima, boolean decisionDelAdmin) {
+        this.fechaDelSorteo = fechaDelSorteo;
+        this.capacidadMaxima = capacidadMaxima;
+        this.decisionDelAdmin = decisionDelAdmin;
+    }
+
 
     public TipoSorteo(boolean decisionDelAdmin) {
         this.decisionDelAdmin = decisionDelAdmin;

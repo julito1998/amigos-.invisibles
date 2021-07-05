@@ -30,6 +30,7 @@ public class SorteoServiceImplements  implements ISorteoAsignacionService{
         }
     }
 
+
     //realizo el sorteo para todos los grupos una vez por dia
     @Override
     public void realizarSorteo(Grupo grupo) throws Exception {
@@ -82,6 +83,7 @@ public class SorteoServiceImplements  implements ISorteoAsignacionService{
             throw new Exception("Error en el servicio de Sorteo Asignacion al intentar realizar el sorteo al azar." + e.getMessage());
         }
     }
+
 
 
     //reviso que grupos cumplen con la condicion para ir generando el sorteo
