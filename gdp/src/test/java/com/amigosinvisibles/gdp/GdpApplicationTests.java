@@ -1,6 +1,7 @@
 package com.amigosinvisibles.gdp;
 
 import com.amigosinvisibles.gdp.model.*;
+import com.amigosinvisibles.gdp.repository.GustoRepo;
 import com.amigosinvisibles.gdp.repository.TipoSorteoRepo;
 import com.amigosinvisibles.gdp.repository.UserInGrupoRepoParaTests;
 import com.amigosinvisibles.gdp.service.GrupoService;
@@ -33,6 +34,9 @@ class GdpApplicationTests {
 	@Autowired
 	private UserInGrupoRepoParaTests userInGrupoRepoParaTests;
 
+	@Autowired
+	private GustoRepo gustoRepo;
+
 
 	@Test
 	void contextLoads() {
@@ -56,12 +60,21 @@ class GdpApplicationTests {
 
 //-----------------------------------------------------------------------------------------------------------
 
+
         //Listas de usuarios con este gusto
         List<User> usuariosGusto1 = new ArrayList<User>();
         usuariosGusto1.add(uJacinto);
         usuariosGusto1.add(uOmar);
         //Gusto(String nombre, String codigo, List<User> usuarios)
-        Gusto gusto1 =  new Gusto("Electronicos", "1", usuariosGusto1);
+        Gusto gusto1 =  new Gusto("Electronicos", "1");
+		Gusto gusto2 =  new Gusto("Accesorios", "2");
+		Gusto gusto3 =  new Gusto("Ropa", "3");
+
+        try{
+			gustoRepo.save(gusto1);
+			gustoRepo.save(gusto2);
+			gustoRepo.save(gusto3);
+		}catch(Exception e){}
 
 //-----------------------------------------------------------------------------------------------------------
 
@@ -91,7 +104,7 @@ class GdpApplicationTests {
 		String temp_dateGrupo1="07/28/2021 11:06:37 AM";
 		Date dateGrupo1= new Date(temp_dateGrupo1);
 		Grupo g1 = new Grupo (sorteo1, "Empresa 1", "1", "activo",dateGrupo1, 10 );
-		Grupo g2 = new Grupo (sorteo3, "Empresa 10", "2", "activo",dateGrupo1, 5 );
+		Grupo g2 = new Grupo (sorteo3, "Empresa 2", "2", "activo",dateGrupo1, 5 );
 		try {
 			grupoService.create(g1);
 			grupoService.create(g2);

@@ -82,4 +82,12 @@ public class Gusto {
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
+
+    public List<User> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(List<User> usuarios) {
+        this.usuarios = usuarios;
+    }
 }
