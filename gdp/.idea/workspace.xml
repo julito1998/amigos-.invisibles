@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="013fb81a-a900-4f6c-a44d-3eec38f290ef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/amigosinvisibles/gdp/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/grupos/administro.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/grupos/administro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/grupos/creargrupo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/grupos/creargrupo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/grupos/pertenezco.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/grupos/pertenezco.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/users/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/users/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/users/new.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/app/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/grupos/administro.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/grupos/administro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/grupos/creargrupo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/grupos/creargrupo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/grupos/pertenezco.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/grupos/pertenezco.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/users/login.html" afterDir="false" />
-    </list>
+    <list default="true" id="013fb81a-a900-4f6c-a44d-3eec38f290ef" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -139,7 +125,7 @@
       <workItem from="1623932740661" duration="14314000" />
       <workItem from="1624016026157" duration="10899000" />
       <workItem from="1624359190990" duration="2902000" />
-      <workItem from="1624911574183" duration="8100000" />
+      <workItem from="1624911574183" duration="8960000" />
     </task>
     <servers />
   </component>
